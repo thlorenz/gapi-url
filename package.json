@@ -4,7 +4,8 @@
   "description": "Small wrapper around Google Url Shortener API providing 'insert' and 'get' methods.",
   "main": "gapi-url.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "start": "budo gapi-url.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
     "load-script": "~1.0.0"
   },
   "devDependencies": {
+    "budo": "~10.0.4",
     "tape": "~4.8.0"
   },
   "keywords": [],
