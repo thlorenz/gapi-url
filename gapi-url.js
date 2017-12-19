@@ -2,27 +2,31 @@
 
 const loadScript = require('load-script')
 
-/*
- *  ## Found Client Only Usage jsfiddle  Example via stackoverflow
- *
- *    http://jsfiddle.net/pPHKe/2/
- *    Using google's client library: https://apis.google.com/js/client.js
- *    Newer version is: https://apis.google.com/js/api.js
- */
-
 const GAPI_URL_API_KEY = 'AIzaSyA2LZbzpowavq0euPXmNhrSW6Q-R4-HnZA'
 const url = 'https://apis.google.com/js/client.js'
 
+function isclientScriptLoaded(url) {
+  const scripts = document.head.getElementsByTagName('script')
+  for (var i = 0; i < scripts.length; i++) {
+    if (scripts[i].src === url) return true
+  }
+  return false
+}
+
 function waitForClient(cb) {
-  if (gapi.client != null) cb()
+  if (gapi.client != null) return cb()
   setTimeout(waitForClient.bind(null, cb), 10)
 }
 
 function initGapi(cb) {
-  loadScript(url, onurlLoaded)
+  if (!isclientScriptLoaded(url)) {
+    loadScript(url, onurlLoaded)
+  } else {
+    onurlLoaded(null)
+  }
 
-  function onurlLoaded(err, script) {
-    if (err) return console.error(err)
+  function onurlLoaded(err) {
+    if (err) return cb(err)
     waitForClient(onclientArrived)
   }
 
@@ -55,3 +59,5 @@ function shortenURL(longUrl, cb) {
     doshorten()
   }
 }
+
+exports.shortenURL = shortenURL

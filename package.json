@@ -5,6 +5,8 @@
   "main": "gapi-url.js",
   "scripts": {
     "test": "tape test/*.js",
+    "test-budo": "budo test/*.js",
+    "spike-budo": "budo tmp/pad.js",
     "start": "budo gapi-url.js"
   },
   "repository": {

@@ -4,12 +4,21 @@ Small wrapper around Google Url Shortener API providing 'insert' and 'get' metho
 
 ## Status
 
-**Streaming implementation tomorrow (Dec 18, Monday)** at 6pm EST on [twitch.tv/thlorenz](https://twitch.tv/thlorenz).
+Basic shortener API implementation with _sanity check_ tests.
+
+**We wil continue on Wed Dec 20th 6-7pm EST** on [twitch](twitch.tv/thlorenz) 📺
+
+### TODOs
+
+- ensure client.js doesnt get added to scripts twice (ideally with a test)
+- clean up `setTimeout` (don't bind, pass `this` context)
+- add more tests and run them on terminal
+- add short url expander API 
 
 ## Getting Started with the Google Shortener API
 
 ### API documented here
- 
+
    https://developers.google.com/url-shortener/v1/url
 
 [link](https://developers.google.com/url-shortener/v1/url)
@@ -42,6 +51,10 @@ curl https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyA2LZbzpowavq0euPXm
 
 ## [API](https://thlorenz.github.io/gapi-url)
 
+
+## Kudos
+
+Found initial client side usage in a cool [jsfiddle](http://jsfiddle.net/pPHKe/2/)
 
 ## License
 
