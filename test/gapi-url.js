@@ -7,11 +7,13 @@ const shortenURL = gapiUrl.shortenURL
 
 test('\nshortens github.com correctly', function(t) {
   shortenURL('https://github.com', check)
+  shortenURL('https://github.com', check)
+
+  t.plan(2 * 2)
 
   function check(err, res) {
     t.ifError(err, 'should not error')
     t.equal(res, 'https://goo.gl/un5E', 'returns the shortened url')
-    t.end()
   }
 })
 

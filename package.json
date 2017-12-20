@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/thlorenz/gapi-url",
   "dependencies": {
-    "load-script": "~1.0.0"
+    "load-script-once": "~1.1.2"
   },
   "devDependencies": {
     "budo": "~10.0.4",
