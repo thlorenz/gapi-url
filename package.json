@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "budo": "~10.0.4",
+    "jsdom": "~11.5.1",
     "tape": "~4.8.0"
   },
   "keywords": [],
