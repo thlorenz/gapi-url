@@ -10,9 +10,7 @@ Basic shortener API implementation with _sanity check_ tests.
 
 ### TODOs
 
-- ensure client.js doesnt get added to scripts twice (ideally with a test)
-- clean up `setTimeout` (don't bind, pass `this` context)
-- add more tests and run them on terminal
+- run tests with chrome-headless since it didnt' work with JSDOM 
 - add short url expander API 
 
 ## Getting Started with the Google Shortener API
