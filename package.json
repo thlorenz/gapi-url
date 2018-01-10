@@ -5,7 +5,8 @@
   "main": "gapi-url.js",
   "scripts": {
     "test": "set -e; node test/runner/jsdom.js",
-    "test-budo": "budo test/*.js"
+    "test-budo": "budo test/*.js",
+    "example": "budo example.js"
   },
   "repository": {
     "type": "git",
