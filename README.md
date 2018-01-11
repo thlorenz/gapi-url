@@ -4,7 +4,9 @@ Small wrapper around Google Url Shortener API providing 'insert' and 'get' metho
 
 ```js
 const gapiUrl = require('gapi-url')
-gapi.shortenURL('https://github.com', print)
+
+const API_KEY = '<your api key here>'
+shortenURL(API_KEY, 'https://github.com', print)
 
 function print(err, res) {
   if (err) return console.error(err)
