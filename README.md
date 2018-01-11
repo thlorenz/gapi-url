@@ -62,7 +62,9 @@ curl https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyA2LZbzpowavq0euPXm
 
 ## Kudos
 
-Found initial client side usage in a cool [jsfiddle](http://jsfiddle.net/pPHKe/2/)
+Thanks to @anvaka for his initial shortener implementation.
+
+- [implementation inside fieldplay](https://github.com/anvaka/fieldplay/blob/2904a2a518dfa7bcb1929997134aef96907c1aea/src/lib/shortener.js)
 
 ## License
 
