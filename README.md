@@ -24,16 +24,16 @@ function print(err, res) {
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [API](#api)
-  - [shortenURL](#shortenurl)
-- [Resources](#resources)
-  - [Getting Started with the Google Shortener API](#getting-started-with-the-google-shortener-api)
-    - [API documented here](#api-documented-here)
-    - [Get API key](#get-api-key)
-    - [View Shortener Console](#view-shortener-console)
-    - [Testing with curl](#testing-with-curl)
-- [Kudos](#kudos)
-- [License](#license)
+-   [API](#api)
+    -   [shortenURL](#shortenurl)
+-   [Resources](#resources)
+    -   [Getting Started with the Google Shortener API](#getting-started-with-the-google-shortener-api)
+        -   [API documented here](#api-documented-here)
+        -   [Get API key](#get-api-key)
+        -   [View Shortener Console](#view-shortener-console)
+        -   [Testing with curl](#testing-with-curl)
+-   [Kudos](#kudos)
+-   [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -49,8 +49,7 @@ Shortens the provided url
 
 -   `apiKey` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** api key of your google application
 -   `link` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** that you want to shorten
--   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** with following signature `function (err, shortenedLink)`
--   `cb`  
+-   `cb` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** with following signature `function (err, shortenedLink)`
 
 ## Resources
 
