@@ -2,17 +2,18 @@
 
 /* global XMLHttpRequest */
 
-const GAPI_URL_API_KEY = 'AIzaSyA2LZbzpowavq0euPXmNhrSW6Q-R4-HnZA'
-const endpoint = `https://www.googleapis.com/urlshortener/v1/url?key=${GAPI_URL_API_KEY}`
 const cache = {}
 
 /**
  * Shortens the provided url
  *
- * @param {String} link that you want to shorten.
- * @param {Function} callback with following signature `function (err, shortenedLink`
+ * @param {String} apiKey api key of your google application
+ * @param {String} link that you want to shorten
+ * @param {Function} callback with following signature `function (err, shortenedLink)`
  */
-function shortenURL(link, cb) {
+function shortenURL(apiKey, link, cb) {
+  const endpoint = 'https://www.googleapis.com/urlshortener/v1/url?key=' + apiKey
+
   const cachedResponse = cache[link]
 
   function callbackWithCachedResponse() { cb(null, cachedResponse) }
