@@ -9,7 +9,7 @@ const cache = {}
  *
  * @param {String} apiKey api key of your google application
  * @param {String} link that you want to shorten
- * @param {Function} callback with following signature `function (err, shortenedLink)`
+ * @param {Function} cb with following signature `function (err, shortenedLink)`
  */
 function shortenURL(apiKey, link, cb) {
   const endpoint = 'https://www.googleapis.com/urlshortener/v1/url?key=' + apiKey
