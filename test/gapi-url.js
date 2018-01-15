@@ -5,6 +5,7 @@ const test = require('tape')
 const gapiUrl = require('../')
 const shortenURL = gapiUrl.shortenURL
 const expandURL = gapiUrl.expandURL
+const getAnalyticsURL = gapiUrl.getAnalyticsURL
 
 const API_KEY = 'AIzaSyA2LZbzpowavq0euPXmNhrSW6Q-R4-HnZA'
 const fmurl = 'http://freemusicarchive.org/genre/Jazz/'
@@ -58,4 +59,23 @@ test('\nround tripping Martin Luther King JR. wiki url ', function(t) {
     t.equal(res.expanded, longUrl, 'includes originally shortened url')
     t.end()
   }
+})
+
+test('\ngetting analytics url', function(t) {
+  const expected = 'https://goo.gl/#analytics/goo.gl/un5E/all_time'
+
+  function check(shortenedURL) {
+    const url = getAnalyticsURL(shortenedURL)
+    t.equal(url, expected, 'works correctly for "' + shortenedURL + '"')
+  }
+
+  check('https://goo.gl/un5E')
+  check('http://goo.gl/un5E')
+  check('/goo.gl/un5E')
+  check('//goo.gl/un5E')
+  check('goo.gl/un5E')
+  check('https://goo.gl/un5E/')
+  check('https://goo.gl/un5E//')
+
+  t.end()
 })

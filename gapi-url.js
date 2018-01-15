@@ -114,5 +114,34 @@ function expandURL(apiKey, shortLink, projection, cb) {
   }
 }
 
+const analyticsPrefix = 'https://goo.gl/#analytics/'
+const alltimeSuffix = '/all_time'
+const protocolRx = /^(http|https)[:]/
+const trailingSlashRx = /\/+$/
+const leadingSlashRx = /^\/+/
+
+/**
+ * Returns the url for the google analytics page for the given
+ * shortened url.
+ *
+ * ### Example
+ *
+ * `getAnalyticsURL('https://goo.gl/un5E')`
+ *
+ * => [https://goo.gl/#analytics/goo.gl/un5E/all_time](https://goo.gl/#analytics/goo.gl/un5E/all_time)
+ *
+ * @param {String} url shortened URL, i.e. obtained via shortenURL
+ * @returns {String} link to the Google Analytics page.
+ */
+function getAnalyticsURL(url) {
+  const fixedUrl = url
+    .trim()
+    .replace(trailingSlashRx, '')
+    .replace(protocolRx, '')
+    .replace(leadingSlashRx, '')
+  return analyticsPrefix + fixedUrl + alltimeSuffix
+}
+
 exports.shortenURL = shortenURL
 exports.expandURL = expandURL
+exports.getAnalyticsURL = getAnalyticsURL
