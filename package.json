@@ -1,6 +1,6 @@
 {
   "name": "gapi-url",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Small wrapper around Google Url Shortener API providing 'insert' and 'get' methods.",
   "main": "gapi-url.js",
   "scripts": {
