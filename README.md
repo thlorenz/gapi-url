@@ -79,6 +79,23 @@ Expands the provided shortened url
 -   `cb` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** with following signature `function (err, expanedLink)`
 -   `shortLink`  
 
+### getAnalyticsURL
+
+Returns the url for the google analytics page for the given
+shortened url.
+
+#### Example
+
+`getAnalyticsURL('https://goo.gl/un5E')`
+
+=> <https://goo.gl/#analytics/goo.gl/un5E/all_time>
+
+**Parameters**
+
+-   `url` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** shortened URL, i.e. obtained via shortenURL
+
+Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** link to the Google Analytics page.
+
 ## Resources
 
 ### Getting Started with the Google Shortener API
