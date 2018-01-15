@@ -6,14 +6,24 @@ Small wrapper around Google Url Shortener API providing 'insert' and 'get' metho
 const gapiUrl = require('gapi-url')
 
 const API_KEY = '<your api key here>'
+
+// Shorten a URL
 shortenURL(API_KEY, 'https://github.com', print)
+
+function printShortened(err, res) {
+  if (err) return console.error(err)
+  console.log('shortened url: ', res)
+  // => shortened url:  https://goo.gl/un5E
+}
+
+// Expand a shortened URL
+expandURL(API_KEY, 'https://goo.gl/un5E', 'FULL', print)
 
 function print(err, res) {
   if (err) return console.error(err)
-  console.log('shortened url: ', res)
+  console.log('expanded url: ', res)
+  // => expanded url: https://github.com
 }
-
-// => shortened url:  https://goo.gl/un5E
 ```
 
 ## Installation
@@ -50,6 +60,24 @@ Shortens the provided url
 -   `apiKey` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** api key of your google application
 -   `link` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** that you want to shorten
 -   `cb` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** with following signature `function (err, shortenedLink)`
+
+### expandURL
+
+Expands the provided shortened url
+
+##### Supported projections
+
+-   ANALYTICS_CLICKS: Returns only click counts
+-   ANALYTICS_TOP_STRINGS: Returns only top string counts
+-   FULL: Returns the creation timestamp and all available analytics
+
+**Parameters**
+
+-   `apiKey` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** api key of your google application
+-   `shortened` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** link that you want to expand
+-   `projection` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** to include more info `ANALYTICS_CLICKS| ANALYTICS_TOP_STRINGS | FULL`
+-   `cb` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** with following signature `function (err, expanedLink)`
+-   `shortLink`  
 
 ## Resources
 
